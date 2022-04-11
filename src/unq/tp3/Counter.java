@@ -70,7 +70,7 @@ public class Counter {
 	
 	//Indica si 2 numeros son multiplos entre si
 	private boolean isMultiple(int num1, int num2) {
-		return num1%num2 == 0;
+		return num2%num1 == 0;
 	}
 	
 	//Getters y Setters
