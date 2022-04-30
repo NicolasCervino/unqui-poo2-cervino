@@ -6,7 +6,6 @@ public class ProductoCooperativa extends Producto {
 		super(nombre, precio);
 	}
 	
-	
 	public Double getPrecio() {
 		double descuento = super.getPrecio() * 10 / 100;
 		return super.getPrecio() - descuento;
