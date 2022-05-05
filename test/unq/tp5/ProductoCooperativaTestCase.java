@@ -7,10 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ProductoCooperativaTestCase {
 	private Producto p1;
+	private Supermercado s;
 	
 	@BeforeEach
 	public void setUp() {
-		p1 = new ProductoCooperativa("Arroz", 20d);
+		p1 = new ProductoCooperativa("Arroz", 20d, s);
 	}
 	
 	@Test

@@ -1,18 +1,14 @@
 package unq.tp5;
 
-
 public class Caja {
 	private Double montoAPagar;
-	private Supermercado supermercado;
 	
-	public Caja(Supermercado s) {
-		this.montoAPagar = (double) 0;
-		this.supermercado = s;
+	public Caja() {
+		this.montoAPagar = 0d;
 	}
 	
-	public void registrarProducto(Producto p) {
-		this.montoAPagar += p.getPrecio();
-		this.supermercado.disminuirStock(p);
+	public void registrar(Registrable r) {
+		this.montoAPagar += r.registrar();
 	}
 	
 	public void informarMonto() {
@@ -24,5 +20,4 @@ public class Caja {
 	public Double getMonto() {
 		return this.montoAPagar;
 	}
-
 }

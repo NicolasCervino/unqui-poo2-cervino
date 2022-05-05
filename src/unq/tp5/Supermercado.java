@@ -19,12 +19,15 @@ public class Supermercado {
 	} 
 	
 	public void disminuirStock(Producto p) {
-		// Primero compruebo si el producto existe
-		if (this.getStock().containsKey(p)) {
+		// Primero compruebo si el producto existe y si el stock es mayor que 0
+		if (this.getStock().containsKey(p) && this.getStock().get(p) > 0) {
 			// Esta variable es igual al stock del producto
 			int stockP = this.getStock().get(p);
 			// Disminuyo la cantidad del producto
 			this.getStock().put(p, stockP - 1);
+		}
+		else {
+			System.out.println("Este producto no posee stock");
 		}
 	}
 	

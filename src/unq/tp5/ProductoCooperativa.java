@@ -2,8 +2,8 @@ package unq.tp5;
 
 public class ProductoCooperativa extends Producto {
 	
-	public ProductoCooperativa(String nombre, Double precio) {
-		super(nombre, precio);
+	public ProductoCooperativa(String nombre, Double precio, Supermercado supermercado) {
+		super(nombre, precio, supermercado);
 	}
 	
 	public Double getPrecio() {

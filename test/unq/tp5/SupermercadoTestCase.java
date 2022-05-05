@@ -9,18 +9,22 @@ public class SupermercadoTestCase {
 	private Producto p1;
 	private Producto p2;
 	private Supermercado supermercado;
+	private Caja caja;
 	
 	@BeforeEach
 	public void setUp() {
-		p1 = new Producto("Arroz", 20d);
-		p2 = new Producto("Yerba", 50d);
-		
 		supermercado = new Supermercado("abc");
+		
+		p1 = new Producto("Arroz", 20d, supermercado);
+		p2 = new Producto("Yerba", 50d, supermercado);
+		
 		
 		supermercado.agregarProducto(p1);
 		supermercado.agregarProducto(p1);
 		
 		supermercado.agregarProducto(p2);
+		
+		caja = new Caja();
 	}
 	
 	@Test
@@ -37,5 +41,15 @@ public class SupermercadoTestCase {
 		
 		int cantP1 = supermercado.getStock().get(p1);
 		assertEquals(cantP1, 1);
+	}
+	
+	@Test
+	public void testDisminuirStockConCaja() {
+		caja.registrar(p1);
+		caja.registrar(p1);
+		caja.registrar(p1);
+		
+		int cantP1 = supermercado.getStock().get(p1);
+		assertEquals(cantP1, 0);
 	}
 }
