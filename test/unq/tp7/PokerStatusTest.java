@@ -1,10 +1,9 @@
 package unq.tp7;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PokerStatusTest {
 	private PokerStatus pokerstatus;
@@ -16,9 +15,14 @@ public class PokerStatusTest {
 	
 	@Test
 	public void testPoker4CartasIguales() {
-		String carta = "10D";
-		System.out.println(carta.substring(0, carta.length()-1));
-		assertTrue(pokerstatus.verificar("1C","1P","1D","1T","9D"));
+		boolean resultado = this.pokerstatus.verificar("1C","1P","1D","1T","9D");
+		assertTrue(resultado);
+	}
+	
+	@Test
+	public void testPoker5CartasIguales() {
+		boolean resultado = this.pokerstatus.verificar("1C","1P","1D","1T","1D");
+		assertTrue(resultado);
 	}
 	
 	@Test
